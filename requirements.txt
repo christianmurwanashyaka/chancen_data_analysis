@@ -86,6 +86,7 @@ statsmodels==0.13.2
 streamlit==1.11.1
 streamlit-lottie==0.0.3
 streamlit-option-menu==0.3.2
+turtle==0.0.1
 tenacity==8.0.1
 terminado==0.15.0
 tinycss2==1.1.1
