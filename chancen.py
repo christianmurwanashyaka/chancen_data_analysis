@@ -122,7 +122,7 @@ if selected =="Case Study":
                             hoverinfo = 'label+percent',
                             textinfo = 'value')
                     )
-                st.subheader('Visualization ISA status for FWF Contact')
+                st.subheader('Visualization ISA status for FWF Contract')
                 st.plotly_chart(fig)
 
                 # employment status
@@ -137,7 +137,7 @@ if selected =="Case Study":
                             hoverinfo = 'label+percent',
                             textinfo = 'value')
                     )
-                st.subheader('Visualization of Employment Status for FWF Contact')
+                st.subheader('Visualization of Employment Status for FWF Contract')
                 st.plotly_chart(fig)
 
                 # risk classification
@@ -152,7 +152,7 @@ if selected =="Case Study":
                             hoverinfo = 'label+percent',
                             textinfo = 'value')
                     )
-                st.subheader('Visualization of risk classification for FWF Contact')
+                st.subheader('Visualization of risk classification for FWF Contract')
                 st.plotly_chart(fig)
 
 # 
@@ -182,7 +182,7 @@ if selected =="Case Study":
                             hoverinfo = 'label+percent',
                             textinfo = 'value')
                     )
-                st.subheader('Visualization ISA status for CIR Contact')
+                st.subheader('Visualization ISA status for CIR Contract')
                 st.plotly_chart(fig)
 
                 # employment status
@@ -191,8 +191,8 @@ if selected =="Case Study":
                 emps2=list(data2['Are you employed'].value_counts().items())
                 
 
-                status =np.array([x[0] for x in emps2])
-                number =np.array([x[1] for x in emps2])
+                status =np.array([x[0] for x in emps1])
+                number =np.array([x[1] for x in emps1])
 
                 fig = go.Figure(
                         go.Pie(
@@ -201,7 +201,7 @@ if selected =="Case Study":
                             hoverinfo = 'label+percent',
                             textinfo = 'value')
                     )
-                st.subheader('Visualization of Employment Status for CIR Contact')
+                st.subheader('Visualization of Employment Status for CIR Contract')
                 st.plotly_chart(fig)
 
                 # risk classification
@@ -218,7 +218,7 @@ if selected =="Case Study":
                             hoverinfo = 'label+percent',
                             textinfo = 'value')
                     )
-                st.subheader('Visualization of risk classification for CIR Contact')
+                st.subheader('Visualization of risk classification for CIR Contract')
                 st.plotly_chart(fig)
 
 
