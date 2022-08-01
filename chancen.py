@@ -76,7 +76,7 @@ if selected =="Case Study":
             contract_selected = st.sidebar.multiselect(
                     'Select the type of Contract',
                     options = ['FWF', 'CIR'],
-                    default = ['FWF', 'CIR']
+                    default = ['CIR', 'FWR']
                 )
 
             gender_selected = st.sidebar.multiselect(
