@@ -127,8 +127,8 @@ if selected =="Case Study":
 
                 # employment status
 
-                status =np.array([emps1[0][0],emps1[1][0]])
-                number =np.array([emps1[0][1],emps1[1][1]+emps1[2][1]])
+                status =np.array([emps2[0][0],emps2[1][0]])
+                number =np.array([emps2[0][1],emps2[1][1]+emps2[2][1]])
 
                 fig = go.Figure(
                         go.Pie(
@@ -139,7 +139,47 @@ if selected =="Case Study":
                     )
                 st.subheader('Visualization of Employment Status for FWF Contact')
                 st.plotly_chart(fig)
+            
+             elif 'CIR' in contract_selected:
+                st.markdown("""---""")
 
+                st.subheader('This is the data from "CONTRACT Object(CIR)" ')
+                cir_selected = st.multiselect('Select ISA STATUS for CIR',
+                            options = data3['ISA Status'].unique(),
+                            default = data3['ISA Status'].unique()
+                    )
+                st.dataframe(data4[data4['ISA Status'].isin(cir_selected) & data4['Gender'].isin(gender_selected)])
+
+
+                # fwf pie chart about isa status and dataframe
+                status =np.array([x[0] for x in ISA_Status_CIR])
+                number =np.array([x[1] for x in ISA_Status_CIR])
+                
+                fig = go.Figure(
+                        go.Pie(
+                            labels = status,
+                            values = number,
+                            hoverinfo = 'label+percent',
+                            textinfo = 'value')
+                    )
+                st.subheader('Visualization ISA status for CIR Contact')
+                st.plotly_chart(fig)
+
+                # employment status
+
+                status =np.array([emps1[0][0],emps1[1][0]])
+                number =np.array([emps1[0][1],emps1[1][1]+emps1[2][1]])
+
+                fig = go.Figure(
+                        go.Pie(
+                            labels = status,
+                            values = number,
+                            hoverinfo = 'label+percent',
+                            textinfo = 'value')
+                    )
+                st.subheader('Visualization of Employment Status for CIR Contact')
+                st.plotly_chart(fig)
+            
                 # risk classification
 
                 status =np.array([x[0] for x in risk2])
