@@ -66,10 +66,10 @@ if selected =="Case Study":
         with right_column:
             st_lottie(lottie_data_analysis, height=300, key= "data-analytics")
         with st.container():
-            data1 = pd.read_excel('Data Analyst Case Workv1.xlsx', sheet_name='CONTRACT Object(CIR)')
-            data2 = pd.read_excel('Data Analyst Case Workv1.xlsx', sheet_name='CONTRACT Object(FWF)')
-            data3 = pd.read_excel('Data Analyst Case Workv1.xlsx', sheet_name='Contact Object (FWF)')
-            data4 = pd.read_excel('Data Analyst Case Workv1.xlsx', sheet_name='Contact Object (CIR)')
+            data1 = pd.read_excel('Data.xlsx', sheet_name='CONTRACT Object(CIR)')
+            data2 = pd.read_excel('Data.xlsx', sheet_name='CONTRACT Object(FWF)')
+            data3 = pd.read_excel('Data.xlsx', sheet_name='Contact Object (FWF)')
+            data4 = pd.read_excel('Data.xlsx', sheet_name='Contact Object (CIR)')
             
             st.sidebar.header("Please Filter Here:")
 
