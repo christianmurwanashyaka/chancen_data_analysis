@@ -36,8 +36,8 @@ if selected =="Home":
 # ---- HEAD SECTION ----
 
     with st.container():
-        st.subheader('Hi, I am Christian MURWANASHYAKA :wave:')
-        st.subheader('Looking for Data Analyst Position in your organization below :point_down:')
+        #st.subheader('Hi, I am Christian MURWANASHYAKA :wave:')
+        #st.subheader('Looking for Data Analyst Position in your organization below :point_down:')
         random_url = "https://chancen.international/wp-content/uploads/2022/03/chancen-logo-2.png"
         st.image(random_url, use_column_width='always')
 
@@ -54,7 +54,7 @@ if selected =="Case Study":
                  return None
                 return r.json()
 #------- Load Assets -----------
-            lottie_data_analysis = load_lottieurl("https://assets8.lottiefiles.com/packages/lf20_nc0px8fd.json")
+            # lottie_data_analysis = load_lottieurl("https://assets8.lottiefiles.com/packages/lf20_nc0px8fd.json")
             st.header("Case Study:")
             st.write('##')
             st.write(""" Our repayments team has requested an understanding and presentation of this data sample. 
@@ -63,20 +63,20 @@ if selected =="Case Study":
                         1. A presentation showing your approach and initial findings.
                         2. A virtualization of the data that could be used by the team to view this data every month (dashboard visualisation)""")
 
-        with right_column:
-            st_lottie(lottie_data_analysis, height=300, key= "data-analytics")
+        # with right_column:
+            # st_lottie(lottie_data_analysis, height=300, key= "data-analytics")
         with st.container():
-            data1 = pd.read_excel('Data.xlsx', sheet_name='CONTRACT Object(CIR)')
-            data2 = pd.read_excel('Data.xlsx', sheet_name='CONTRACT Object(FWF)')
-            data3 = pd.read_excel('Data.xlsx', sheet_name='Contact Object (FWF)')
-            data4 = pd.read_excel('Data.xlsx', sheet_name='Contact Object (CIR)')
+            data1 = pd.read_excel('Data Analyst Case Workv1.xlsx', sheet_name='CONTRACT Object(CIR)')
+            data2 = pd.read_excel('Data Analyst Case Workv1.xlsx', sheet_name='CONTRACT Object(FWF)')
+            data3 = pd.read_excel('Data Analyst Case Workv1.xlsx', sheet_name='Contact Object (FWF)')
+            data4 = pd.read_excel('Data Analyst Case Workv1.xlsx', sheet_name='Contact Object (CIR)')
             
             st.sidebar.header("Please Filter Here:")
 
             contract_selected = st.sidebar.multiselect(
                     'Select the type of Contract',
-                    options = ['CIR', 'FWF'],
-                    default = ['CIR', 'FWF']
+                    options = ['FWF', 'CIR'],
+                    default = ['FWF', 'CIR']
                 )
 
             gender_selected = st.sidebar.multiselect(
@@ -126,7 +126,7 @@ if selected =="Case Study":
                 st.plotly_chart(fig)
 
                 # employment status
-                emps2=list(data2['Are you employed'].value_counts().items())
+
                 status =np.array([emps2[0][0],emps2[1][0]])
                 number =np.array([emps2[0][1],emps2[1][1]+emps2[2][1]])
 
@@ -188,11 +188,11 @@ if selected =="Case Study":
                 # employment status
 
                 emps1=list(data1['Are you employed'].value_counts().items())
-                
+                emps2=list(data2['Are you employed'].value_counts().items())
                 
 
-                status =np.array([x[0] for x in emps1])
-                number =np.array([x[1] for x in emps1])
+                status =np.array([x[0] for x in emps2])
+                number =np.array([x[1] for x in emps2])
 
                 fig = go.Figure(
                         go.Pie(
