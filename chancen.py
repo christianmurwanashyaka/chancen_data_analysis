@@ -75,8 +75,8 @@ if selected =="Case Study":
 
             contract_selected = st.sidebar.multiselect(
                     'Select the type of Contract',
-                    options = ['FWF', 'CIR'],
-                    default = ['FWF', 'CIR']
+                    options = ['CIR', 'FWF'],
+                    default = ['CIR', 'FWF']
                 )
 
             gender_selected = st.sidebar.multiselect(
@@ -126,7 +126,7 @@ if selected =="Case Study":
                 st.plotly_chart(fig)
 
                 # employment status
-
+                emps2=list(data2['Are you employed'].value_counts().items())
                 status =np.array([emps2[0][0],emps2[1][0]])
                 number =np.array([emps2[0][1],emps2[1][1]+emps2[2][1]])
 
@@ -188,7 +188,7 @@ if selected =="Case Study":
                 # employment status
 
                 emps1=list(data1['Are you employed'].value_counts().items())
-                emps2=list(data2['Are you employed'].value_counts().items())
+                
                 
 
                 status =np.array([x[0] for x in emps1])
