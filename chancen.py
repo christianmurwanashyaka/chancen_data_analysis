@@ -63,9 +63,7 @@ if selected =="Case Study":
                         1. A presentation showing your approach and initial findings.
                         2. A virtualization of the data that could be used by the team to view this data every month (dashboard visualisation)""")
 
-         with right_column:
-            
-            
+        with right_column:
             st_lottie(lottie_data_analysis, height=300, key= "data-analytics")
         with st.container():
             data1 = pd.read_excel('Data.xlsx', sheet_name='CONTRACT Object(CIR)')
