@@ -140,7 +140,7 @@ if selected =="Case Study":
                 st.subheader('Visualization of Employment Status for FWF Contact')
                 st.plotly_chart(fig)
             
-             elif 'CIR' in contract_selected:
+            elif 'CIR' in contract_selected:
                 st.markdown("""---""")
 
                 st.subheader('This is the data from "CONTRACT Object(CIR)" ')
