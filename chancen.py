@@ -54,7 +54,7 @@ if selected =="Case Study":
                  return None
                 return r.json()
 #------- Load Assets -----------
-            # lottie_data_analysis = load_lottieurl("https://assets8.lottiefiles.com/packages/lf20_nc0px8fd.json")
+            lottie_data_analysis = load_lottieurl("https://assets8.lottiefiles.com/packages/lf20_nc0px8fd.json")
             st.header("Case Study:")
             st.write('##')
             st.write(""" Our repayments team has requested an understanding and presentation of this data sample. 
@@ -63,8 +63,10 @@ if selected =="Case Study":
                         1. A presentation showing your approach and initial findings.
                         2. A virtualization of the data that could be used by the team to view this data every month (dashboard visualisation)""")
 
-        # with right_column:
-            # st_lottie(lottie_data_analysis, height=300, key= "data-analytics")
+         with right_column:
+            
+            
+            st_lottie(lottie_data_analysis, height=300, key= "data-analytics")
         with st.container():
             data1 = pd.read_excel('Data.xlsx', sheet_name='CONTRACT Object(CIR)')
             data2 = pd.read_excel('Data.xlsx', sheet_name='CONTRACT Object(FWF)')
