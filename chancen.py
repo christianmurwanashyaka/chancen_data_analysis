@@ -36,8 +36,8 @@ if selected =="Home":
 # ---- HEAD SECTION ----
 
     with st.container():
-        #st.subheader('Hi, I am Christian MURWANASHYAKA :wave:')
-        #st.subheader('Looking for Data Analyst Position in your organization below :point_down:')
+        st.subheader('Hi, I am Christian MURWANASHYAKA :wave:')
+        st.subheader('Looking for Data Analyst Position in your organization below :point_down:')
         random_url = "https://chancen.international/wp-content/uploads/2022/03/chancen-logo-2.png"
         st.image(random_url, use_column_width='always')
 
@@ -75,8 +75,8 @@ if selected =="Case Study":
 
             contract_selected = st.sidebar.multiselect(
                     'Select the type of Contract',
-                    options = ['CIR', 'FWR'],
-                    default = ['CIR', 'FWR']
+                    options = ['FWF', 'CIR'],
+                    default = ['FWF', 'CIR']
                 )
 
             gender_selected = st.sidebar.multiselect(
@@ -139,47 +139,7 @@ if selected =="Case Study":
                     )
                 st.subheader('Visualization of Employment Status for FWF Contact')
                 st.plotly_chart(fig)
-            
-            elif 'CIR' in contract_selected:
-                st.markdown("""---""")
 
-                st.subheader('This is the data from "CONTRACT Object(CIR)" ')
-                cir_selected = st.multiselect('Select ISA STATUS for CIR',
-                            options = data3['ISA Status'].unique(),
-                            default = data3['ISA Status'].unique()
-                    )
-                st.dataframe(data4[data4['ISA Status'].isin(cir_selected) & data4['Gender'].isin(gender_selected)])
-
-
-                # fwf pie chart about isa status and dataframe
-                status =np.array([x[0] for x in ISA_Status_CIR])
-                number =np.array([x[1] for x in ISA_Status_CIR])
-                
-                fig = go.Figure(
-                        go.Pie(
-                            labels = status,
-                            values = number,
-                            hoverinfo = 'label+percent',
-                            textinfo = 'value')
-                    )
-                st.subheader('Visualization ISA status for CIR Contact')
-                st.plotly_chart(fig)
-
-                # employment status
-
-                status =np.array([emps1[0][0],emps1[1][0]])
-                number =np.array([emps1[0][1],emps1[1][1]+emps1[2][1]])
-
-                fig = go.Figure(
-                        go.Pie(
-                            labels = status,
-                            values = number,
-                            hoverinfo = 'label+percent',
-                            textinfo = 'value')
-                    )
-                st.subheader('Visualization of Employment Status for CIR Contact')
-                st.plotly_chart(fig)
-            
                 # risk classification
 
                 status =np.array([x[0] for x in risk2])
@@ -231,8 +191,8 @@ if selected =="Case Study":
                 emps2=list(data2['Are you employed'].value_counts().items())
                 
 
-                status =np.array([x[0] for x in emps2])
-                number =np.array([x[1] for x in emps2])
+                status =np.array([x[0] for x in emps1])
+                number =np.array([x[1] for x in emps1])
 
                 fig = go.Figure(
                         go.Pie(
